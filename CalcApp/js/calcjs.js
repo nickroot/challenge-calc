@@ -244,8 +244,8 @@ can this be done with angular?
     
     toNegativeNumber = function (numString) {
         var result = 0;
-        if (numberString) {
-            result = numberString * -1;
+        if (numString) {
+            result = numString * -1;
         }
         return result;
     };
