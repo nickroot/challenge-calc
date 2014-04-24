@@ -1,8 +1,8 @@
 
-var challangecalcApp = angular.module('challangecalcApp', []);
+var challengecalcApp = angular.module('challengecalcApp', []);
 
 
-challangecalcApp.directive("bnDocumentKeypress", function( $document, $parse ){
+challengecalcApp.directive("bnDocumentKeypress", function( $document, $parse ){
                 var linkFunction = function( $scope, $element, $attributes ){
                     var scopeExpression = $attributes.bnDocumentKeypress;
                         var invoker = $parse( scopeExpression );
@@ -25,7 +25,7 @@ challangecalcApp.directive("bnDocumentKeypress", function( $document, $parse ){
                 return( linkFunction );
             }
         );
-challangecalcApp.controller("ChallangecalcController", function ($scope) {
+challengecalcApp.controller("ChallengecalcController", function ($scope) {
 
     
     $scope.output = "0";
