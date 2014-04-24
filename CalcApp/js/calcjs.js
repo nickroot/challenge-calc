@@ -194,7 +194,7 @@ challengecalcApp.controller("ChallengecalcController", function ($scope) {
                     }
                 }
             } else {
-                $scope.runningTotal = 0;
+                $scope.runningTotal = null;
             }
         }
         setOutput($scope.runningTotal);
@@ -267,7 +267,7 @@ thus when a user hits a key on the keyboard the button will also be depressed in
         else if (code == 187 || code == 107) {
             $scope.add();
           }
-       else if (code == 106) {
+       else if (code == 42) {
             $scope.multiply();
           }
        else if (code == 191 || code == 111) {
