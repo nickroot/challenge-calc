@@ -1,0 +1,36 @@
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+}
+#Header_image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn-lg,
+.btn-group-lg > .btn {
+    width: 100%;
+}
+.table {
+    margin-bottom: 0px !important;
+}
+table td {
+    border-top: none !important;
+}
+#calcdisplay {
+    height: 80px !important;
+}
+.calc-output {
+    padding:0 10px;
+    text-align:right;
+    font-size: 20px;
+}
+.calcbody {
+    background:#ffffff;
+    width:310px;
+    padding:10px;
+}
+.calccontainer {
+    width: 400px;
+    padding: 10px;
+}

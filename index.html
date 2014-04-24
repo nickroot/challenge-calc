@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html ng-app="challangecalcApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js" type="text/javascript"></script>
+    <script src="CalcApp/js/calcjs.js" type="text/javascript"></script>
+    <link href="CalcApp/style/default.css" rel="stylesheet" type="text/css">
+    <link href="CalcApp/style/bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-controller="ChallangecalcController" bn-document-Keypress="handleKeypress( $event )"> 
+    <div class="calccontainer">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <img id="Header_image" src="http://www.circleback.com/email_assets/CB_Logo_Top_Email_508x128@2x.png" width="256" border="0" alt="" style="height: auto" />
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div id="calcdisplay" ng-class="{true: 'alert alert-info', false: 'alert alert-danger'}[output >= 0]">
+                    <p class="calc-output" name="calc-output">{{output}}
+                        <br>{{operationToken}}</p>
+                </div>
+                <table border="0" class="table">
+                    <tr style="border: none;">
+                        <td>
+                            <a type="button" class="btn btn-lg" ng-class="{true: ' btn-success', false: 'btn-info'}[pendingOperation == 'subtracting']" ng-click='subtract()'>-</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-lg" ng-class="{true: ' btn-success', false: 'btn-info'}[pendingOperation == 'adding']" ng-click='add()'>+</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-lg" ng-class="{true: ' btn-success', false: 'btn-info'}[pendingOperation == 'multipling']" ng-click='multiply()'>*</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-lg" ng-class="{true: ' btn-success', false: 'btn-info'}[pendingOperation == 'dividing']" ng-click='divide()'>/</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="btn btn-default btn-lg" value="1" ng-click='updateOutput(1)'>1</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-default btn-lg" value="2" ng-click='updateOutput(2)'>2</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-default btn-lg" value="3" ng-click='updateOutput(3)'>3</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-info btn-lg" ng-click="updateOutNeg()">+/-</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a type="button" class="btn btn-default btn-lg" value="4" ng-click='updateOutput(4)'>4</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-default btn-lg" value="5" ng-click='updateOutput(5)'>5</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-default btn-lg" value="6" ng-click='updateOutput(6)'>6</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-info btn-lg" ng-click="updateOutput('.')">.</a>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <a type="button" class="btn btn-default btn-lg" value="7" ng-click='updateOutput(7)'>7</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-default btn-lg" value="8" ng-click='updateOutput(8)'>8</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-default btn-lg" value="9" ng-click='updateOutput(9)'>9</a>
+                        </td>
+                        <td>
+                            <a type="button"  name="btnEquals" class="btn btn-primary btn-lg" ng-click='calculate()'>=</a>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table">
+                    <tr>
+                        <td>
+                            <a type="button" class="btn btn-default btn-lg" value="0" ng-click='updateOutput(0)'>0</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-default btn-lg" ng-click='clear()'>CLEAR</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+ </body>
+</html>
